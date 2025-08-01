@@ -1,14 +1,12 @@
 let teams = [];
 let showingAnswer = false;
 let currentTile = null;
-
 // Add team button handler
 document.getElementById('addTeam').addEventListener('click', () => {
   const team = { name: `Team ${teams.length + 1}`, score: 0 };
   teams.push(team);
   renderTeams();
 });
-
 // Render teams in sidebar
 function renderTeams() {
   const scoreboard = document.getElementById('scoreboard');
@@ -42,12 +40,10 @@ document.getElementById('fileInput').addEventListener('change', function (e) {
     }
   });
 });
-
 // Build the Jeopardy board
 function buildBoard(data) {
   const board = document.getElementById('board');
   board.innerHTML = '';
-
   // Get unique categories
   const categories = [...new Set(data.map(q => q.Category))];
   categories.forEach(cat => {
@@ -56,16 +52,13 @@ function buildBoard(data) {
     div.textContent = cat;
     board.appendChild(div);
   });
-
   // Get unique point values sorted
   const values = [...new Set(data.map(q => parseInt(q.Value)))].sort((a, b) => a - b);
-
   values.forEach(value => {
     categories.forEach(cat => {
       const tile = document.createElement('div');
       tile.className = 'tile';
       tile.textContent = value;
-
       const question = data.find(q => q.Category === cat && parseInt(q.Value) === value);
       if (question) {
         tile.dataset.question = question.Question;
@@ -80,19 +73,15 @@ function buildBoard(data) {
     });
   });
 }
-
 // Open modal on question click
 function openModal(tile) {
   currentTile = tile;
   showingAnswer = false;
-
   const modal = document.getElementById('modal');
   modal.style.display = 'flex';
-
   document.getElementById('modal-category').textContent = tile.dataset.category;
   document.getElementById('modal-text').textContent = tile.dataset.question;
 }
-
 // Clicking modal toggles question/answer or closes modal
 document.getElementById('modal').addEventListener('click', () => {
   if (!showingAnswer) {
