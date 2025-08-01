@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VIL Trivia</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+</head>
+<body>
+  <div id="container">
+    <aside id="sidebar">
+      <input type="file" id="fileInput" />
+      <button id="addTeam">Add Team</button>
+      <div id="scoreboard"></div>
+    </aside>
+
+    <main id="main">
+      <h1 id="title">VIL Trivia</h1>
+      <div id="board">
+        <p>Please upload a trivia CSV to generate the board.</p>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal" id="modal">
+    <div id="modal-content">
+      <div id="modal-category"></div>
+      <div id="modal-text"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
