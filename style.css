@@ -101,7 +101,6 @@ body, html {
   height: 100vh;
   background: #001f4d;
   color: #fff;
-  display: flex;
   justify-content: center;
   align-items: center;
   padding: 40px;
