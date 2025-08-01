@@ -63,6 +63,7 @@ body, html {
   overflow: auto;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: minmax(80px, auto); /* 👈 controls row height */
   gap: 8px;
 }
 .category {
